@@ -1,0 +1,123 @@
+FPRO1∙  ;THIS CODE WIL CALCULATE A BILL HOSPITAL [ 09/28/2015  6:12 PM ]←
+∙       ;THIS PROGRAM WAS DONE BY THE JAMS←
+∙       ;MOHAMMED ALJASER, SARAH HOLZER, JESSE NOBERS←
+∙       D HOSPITAL←
+∙       D INFO←
+∙       D DOCTOR←
+∙       D ROOM←
+∙       D DIAGNOSIES ←
+∙       D COVERAGE←
+∙       D BILL←
+∙       Q←
+∙       ←
+HOSPITAL∙       ←
+∙       W #,/CUP(1,20),"JAMS HOSPITAL"←
+∙       W /CUP(2,20),"15 YAMEN RD YAMEN"←
+∙       W /CUP(3,20),"PITTSBURGH, PA, 15111"←
+∙       W /CUP(4,20),"412-412-4124"←
+∙       W !,"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"←
+∙       Q←
+INFO∙   W #←
+∙       R /CUP(7,10)," ENTER YOUR THE PATIENT NAME: ",NAME←
+∙       R /CUP(8,10)," ENTER THE SSN#: ",SSN←
+∙       R /CUP(9,10)," ENTER DAYS STAYED: ",DAYS←
+∙       Q←
+∙       ←
+DOCTOR∙ ←
+∙       R /CUP(13,10),"1. DR. ROBERT DON∙       CANCER∙ ∙       $370.00"←
+∙       R /CUP(14,10),"2. DR. SHARON FITZ∙      CARDIOLOGIS∙    $230.00"←
+∙       R /CUP(15,10),"3. DR. KEN MOONEY∙       DERMATOLIGIS∙   $345.00"←
+∙       R /CUP(16,10),"4. DR. HENRY CROONEY∙    GENERAL∙∙       $260.00"←
+∙       R /CUP(17,10),"5. DR. MONICA GILLER∙    GYNECOLOGIST∙   $300.00"←
+∙       R /CUP(19,10),"CHOOSE DOCTOR ID NUMBER ",DOC←
+∙       IF DOC=1 SET DOC="ROBERT DON" SET DCOST=370←
+∙       IF DOC=2 SET DOC="SHARON FITZ" SET DCOST=230←
+∙       IF DOC=3 SET DOC="KEN MOONEY" SET DCOST=345←
+∙       IF DOC=4 SET DOC="HENRY CROONEY" SET DCOST=260←
+∙       IF DOC=5 SET DOC="MONICA GILLER" SET DCOST=300←
+∙       R /CUP(21,10)," IS THE DOCTOR CHOSEN ?Y/N ",DPICK←
+∙       IF DPICK="Y" GOTO ROOM←
+∙       IF DPICK="N" GOTO DOCTOR←
+∙       Q←
+∙       ←
+ROOM∙   ←
+∙       W #,/CUP(2,5),"ROOM DAILY COST"←
+∙       W /CUP(3,15),"   ROOMS∙ ∙       ∙       ∙       COST"←
+∙       W /CUP(5,15)," 1. 5 BED∙∙       ∙       ∙       300"←
+∙       W /CUP(6.15)," 2. 4 BED∙∙       ∙       ∙       700"←
+∙       W /CUP(7,15)," 3. SEMIPRIVATE∙  ∙       ∙       1000"←
+∙       W /CUP(8,15)," 4. PRIVATE∙      ∙       ∙       1500"←
+∙       W /CUP(9,15)," 5. ROYAL SUITE∙  ∙       ∙       3000"←
+∙       R /CUP(15,15),"CHOOSE ROOM ID NUMBER ",ROOMID←
+∙       IF ROOMID=1 SET ROOMID="5 BED" SET RCOST=300←
+∙       IF ROOMID=2 SET ROOMID="4 BED" SET RCOST=700←
+∙       IF ROOMID=3 SET ROOMID="SEMIPRIVATE" SET RCOST=1000←
+∙       IF ROOMID=4 SET ROOMID="PRIVATE" SET RCOST=1500←
+∙       IF ROOMID=5 SET ROOMID="ROYAL SUITE" SET RCOST=3000←
+∙       R /CUP(17,15)," IS THE DOCTOR CHOSEN ?Y/N ",RPICK←
+∙       IF RPICK="Y" GOTO DIAGNOSIES←
+∙       IF RPICK="N" GOTO ROOM←
+∙       Q←
+∙       ←
+DIAGNOSI∙       ←
+∙       W #,/CUP(2,5),"DIAGNOSIES COST"←
+∙       W /CUP(3,15)," DISEASE∙ ∙       ∙       ∙       COST"←
+∙       W /CUP(5,15)," 1. SICKNESS∙     ∙       ∙       300"←
+∙       W /CUP(6.15),"  2. HEART DISAESE∙       ∙       700"←
+∙       W /CUP(7,15)," 3. ACNE∙ ∙       ∙       ∙       1000"←
+∙       W /CUP(8,15)," 4. C-SECTION∙    ∙       ∙       1500"←
+∙       W /CUP(9,15)," 5. CANCER∙       ∙       ∙       3000"←
+∙       R /CUP(15,15),"CHOOSE DISEASE ID NUMBER ",DIG←
+∙       IF DIG=1 SET DIG="SICKNESS" SET DIGCOST=300←
+∙       IF DIG=2 SET DIG="HEART DISEASE" SET DIGCOST=700←
+∙       IF DIG=3 SET DIG="ACNE" SET DIGCOST=1000←
+∙       IF DIG=4 SET DIG="C-SECTION" SET DIGCOST=1500←
+∙       IF DIG=5 SET DIG="CANCER" SET DIGCOST=3000←
+∙       R /CUP(17,15)," IS THE DIAGNOSES CHOSEN ?Y/N ",DIGPICK←
+∙       IF DIGPICK="Y" GOTO COVERAGE←
+∙       IF DIGPICK="N" GOTO DIAGNOSIES←
+∙       Q←
+∙       ←
+COVERAGE∙       ←
+∙       W #,/CUP(2,5),"INSURANCE COVERAGE COST"←
+∙       W /CUP(3,15),"INSURANCE∙∙       ∙       ∙       COVERAGE"←
+∙       W /CUP(5,15)," 1. AETNA∙∙       ∙       ∙       1  "←
+∙       W /CUP(6.15),"  2. UPMC∙∙       ∙       ∙       0.75 "←
+∙       W /CUP(7,15)," 3. HIGHMARK∙     ∙       ∙       0.90 "←
+∙       W /CUP(8,15)," 4. HEALTH AMERICA∙       ∙       1 "←
+∙       W /CUP(9,15)," 5. ALGEANY∙      ∙       ∙       0.50 "←
+∙       R /CUP(15,15),"CHOOSE INSURANCE ID NUMBER ",INS←
+∙       IF INS=1 SET INS="AETNA" SET INSCOST=1←
+∙       IF INS=2 SET INS="UPMC"  SET INSCOST=0.75←
+∙       IF INS=3 SET INS="HIGHMARK" SET INSCOST=0.90←
+∙       IF INS=4 SET INS="HEALTH AMERICA" SET INSCOST=1←
+∙       IF INS=5 SET INS="ALGHEANY" SET INSCOST=0.50←
+∙       R /CUP(17,15)," IS THE INSURANCE CHOSEN ?Y/N ",INSPICK←
+∙       IF INSPICK="Y" GOTO BILL←
+∙       IF INSPICK="N" GOTO COVERAGE←
+∙       Q←
+∙       ←
+BILL∙   ←
+∙       W #←
+∙       SET BILL1=RCOST*DAYS←
+∙       SET BILL2=BILL1+DCOST+DIGCOST+SC+DC+LC←
+∙       SET BILL3=BILL2*INSCOST←
+∙       SET TBILL=BILL2-BILL3←
+∙       W #,CUP(2,20),"JAMS HOSPITAL TOTAL CHARGES"←
+∙       W !,"**************************************************"←
+∙       W !,/CUP(4,15),"NAME: ",NAME←
+∙       W !,/CUP(5,15),"SOCIAL SECURITY #: ",SSN←
+∙       W !,/CUP(6,15),"DOCTOR NAME",DOC←
+∙       W !,/CUP(7,15),"ROOM TYPE",ROOMID←
+∙       W !,/CUP(8,15),"DIAGONASIES",DIG←
+∙       W !,/CUP(9,15),"INSURANCE",INS←
+∙       W !,/CUP(10,15),"DOCTOR COST",DCOST←
+∙       W !,/CUP(11,15),"ROOM COST",RCOST←
+∙       W !,/CUP(12,15),"DIAGONASIES COST",DIGCOST←
+∙       W !,/CUP(13,15),"INSURANCE COVERAGE COST",INSCOST←
+∙       W !,"***************************************************"←
+∙       W /CUP(16,15),"TOTAL COST: ",$J("$"_$FN(BILL2,",",2),14)←
+∙       W /CUP(17,15),"TOTAL INSURANCE COVERAGE: ",$J("$"_$FN(BILL3,",",2),14)←
+∙       W !,"***************************************************"←
+∙       W /CUP(20,15),"TOTAL AMOUNT DUE FOR JAMS HOSPITAL: ",$J("$"_$FN(TBILL,",",2),14)←
+∙       Q←
